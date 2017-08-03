@@ -18,7 +18,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 //aDDED BY SRU
-app.get('/ui/madi.png', function (req, res) {
+app.get('/ui/depositphotos_127845906-stock-illustration-black-headphones-with-red-cord.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'depositphotos_127845906-stock-illustration-black-headphones-with-red-cord.jpg'));
 });
 
