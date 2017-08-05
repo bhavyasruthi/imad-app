@@ -87,7 +87,7 @@ app.get('/', function (req, res) {
 
 app.get('/:role', function (req, res) {
   //res.sendFile(path.join(__dirname, 'ui', 'sruthi.html'));
-  var role=request.params.role;
+  var role=req.params.role;
   res.send(createTemplate(contents[role]));
 });
 
