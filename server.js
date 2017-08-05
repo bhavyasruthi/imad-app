@@ -85,7 +85,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/;role', function (req, res) {
+app.get('/:role', function (req, res) {
   //res.sendFile(path.join(__dirname, 'ui', 'sruthi.html'));
   res.send(createTemplate(contents[role]));
 });
