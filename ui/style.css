@@ -21,3 +21,12 @@ body {
     height: 200px;
 }
 
+.pageContent {
+    height: 30rem;
+    left: 4rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    top: 9.5rem;
+    width: 36rem;
+}
