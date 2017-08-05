@@ -4,7 +4,7 @@ var path = require('path');
 
 var app = express();
 var contents = {
-     b : {
+     "sruthi" : {
         "title" : "sruthi",
         "role"  : "Bride",
         "matter" : `<h4>From the words of the Sandeep!! (If only you have the patience and time to read it :P )</h4>
@@ -23,7 +23,7 @@ var contents = {
             'Intamandi undaga Sruthi nake enduku friend ayindi' is the most common adage that follows her!!
         </p>`
     },
-    g : {
+    "sandy" : {
         "title" : "sandy",
         "role"  : "Groom",
         "matter" : `<h4>From the words of the Sruthi!! (If only you have the patience and time to read it :P )</h4>
@@ -85,9 +85,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/sruthi', function (req, res) {
+app.get('/;role', function (req, res) {
   //res.sendFile(path.join(__dirname, 'ui', 'sruthi.html'));
-  res.send(createTemplate(contents[b]));
+  res.send(createTemplate(contents[role]));
 });
 
 app.get('/sandy', function (req, res) {
