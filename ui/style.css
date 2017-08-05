@@ -1,8 +1,9 @@
 body {
     font-family: sans-serif;
     background-color: orange;
-   
     margin-top: 75px;
+    margin-left: 41px;
+    margin-right: 41;
 }
 
 .center {
