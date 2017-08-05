@@ -3,8 +3,8 @@ var morgan = require('morgan');
 var path = require('path');
 
 var app = express();
-var contents= {
-     b = {
+var contents = {
+     b : {
         "title" : "sruthi",
         "role"  : "Bride",
         "matter" : `<h4>From the words of the Sandeep!! (If only you have the patience and time to read it :P )</h4>
@@ -23,7 +23,7 @@ var contents= {
             'Intamandi undaga Sruthi nake enduku friend ayindi' is the most common adage that follows her!!
         </p>`
     },
-    g = {
+    g : {
         "title" : "sandy",
         "role"  : "Groom",
         "matter" : `<h4>From the words of the Sruthi!! (If only you have the patience and time to read it :P )</h4>
