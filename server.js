@@ -91,10 +91,10 @@ app.get('/:role', function (req, res) {
   res.send(createTemplate(contents[role]));
 });
 
-app.get('/sandy', function (req, res) {
+/*app.get('/sandy', function (req, res) {
  // res.sendFile(path.join(__dirname, 'ui', 'sandy.html'));
  res.send(createTemplate(contents[g]));
-});
+});*/
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
