@@ -29,4 +29,6 @@ body {
     position: absolute;
     top: 9.5rem;
     width: 36rem;
+    padding-left : 20;
+    padding-right: 20;
 }
