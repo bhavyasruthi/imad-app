@@ -27,7 +27,7 @@ var contents = {
         "title" : "sandy",
         "role"  : "Groom",
         "matter" : `<img src= "/ui/apple 588.JPG" class="img-medium"/><br>
-        <img src="/ui/collage.png" class="img-medium"/>
+        <img src="https://scontent-mia3-2.xx.fbcdn.net/v/t1.0-9/60680_828325837202296_738102545659711885_n.jpg?oh=17da8faab98b8b36ddf79907b107fb9a&oe=59FC824A" class="img-medium"/>
         <h4>From the words of the Sruthi!! (If only you have the patience and time to read it :P )</h4>
         <p>
         Sandeep : Mr.Handsome - As each letter in his name says he is Sweet - Amazing- Noble- Delightful- Everlasting- Extraordinary- Perfect
