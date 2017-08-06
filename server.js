@@ -7,7 +7,9 @@ var contents = {
      "sruthi" : {
         "title" : "sruthi",
         "role"  : "Bride",
-        "matter" : `<h4>From the words of the Sandeep!! (If only you have the patience and time to read it :P )</h4>
+        "matter" : `
+        <img src="https://scontent-mia3-2.xx.fbcdn.net/v/t1.0-9/20245373_340278849726149_7559607988906371824_n.jpg?oh=be74653e3201141b4618136f785993d9&oe=5A2EFEA0" class="img-medium"/>
+        <h4>From the words of the Sandeep!! (If only you have the patience and time to read it :P )</h4>
         <p>
                    Sruthi!! - Whataaa Girl she is!!! This is the first feeling that would strike the mind in the initial few minutes of conversation..
             She has the energy of a star/comet..wonder where she has so much energy stored in her small little thin feeble looking personality.
@@ -26,7 +28,7 @@ var contents = {
     "sandy" : {
         "title" : "sandy",
         "role"  : "Groom",
-        "matter" : `<img src= "/ui/apple 588.JPG" class="img-medium"/><br>
+        "matter" : `
         <img src="https://scontent-mia3-2.xx.fbcdn.net/v/t1.0-9/60680_828325837202296_738102545659711885_n.jpg?oh=17da8faab98b8b36ddf79907b107fb9a&oe=59FC824A" class="img-medium"/>
         <h4>From the words of the Sruthi!! (If only you have the patience and time to read it :P )</h4>
         <p>
