@@ -12,5 +12,5 @@ var margin=0;
 function move()
 {
     margin=margin+20;
-    img.style.marginTop='200px';
+    img.style.marginTop=margin + 'px';
 }
