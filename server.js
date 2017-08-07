@@ -84,6 +84,12 @@ var htmlTemplate = `<html>
 `;
 return htmlTemplate;
 }
+
+function count(){
+    counter++;
+    document.getElementById('button').innerHTML = counter;
+    
+}
 app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
