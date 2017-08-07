@@ -5,5 +5,5 @@ ele.innerHTML = "its  new value !!!";
 var img= document.getElementById('img');
 img.onclick = function()
 {
-    img.style.marginTop=200;
+    img.style.marginLeft=200;
 };
