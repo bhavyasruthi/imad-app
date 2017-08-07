@@ -85,7 +85,8 @@ var htmlTemplate = `<html>
 return htmlTemplate;
 }
 
-function count(){
+function onClicked(){
+    alert("dfg");
     counter++;
     document.getElementById('button').innerHTML = counter;
     
