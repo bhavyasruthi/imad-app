@@ -7,3 +7,10 @@ img.onclick = function()
 {
     img.style.marginTop='200px';
 };
+setInterval(move,20);
+var margin=0;
+function move()
+{
+    margin=margin+20;
+    img.style.marginTop='200px';
+}
