@@ -3,6 +3,7 @@ var morgan = require('morgan');
 var path = require('path');
 
 var app = express();
+var counter=0;
 var contents = {
      "sruthi" : {
         "title" : "sruthi",
@@ -93,6 +94,11 @@ app.get('/:role', function (req, res) {
   //res.sendFile(path.join(__dirname, 'ui', 'sruthi.html'));
   var role=req.params.role;
   res.send(createTemplate(contents[role]));
+});
+
+app.get('/counter', function (req, res) {
+    counter++;
+  res.send(""+counter);
 });
 
 /*app.get('/sandy', function (req, res) {
