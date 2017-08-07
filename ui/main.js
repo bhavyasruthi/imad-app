@@ -7,7 +7,7 @@ img.onclick = function()
 {
     img.style.marginTop='200px';
 };
-setInterval(move,20);
+setInterval(move,200);
 var margin=0;
 function move()
 {
