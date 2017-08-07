@@ -85,12 +85,7 @@ var htmlTemplate = `<html>
 return htmlTemplate;
 }
 
-function onClicked(){
-    alert("dfg");
-    counter++;
-    document.getElementById('button').innerHTML = counter;
-    
-}
+
 app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
