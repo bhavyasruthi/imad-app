@@ -6,8 +6,9 @@ var img= document.getElementById('img');
 img.onclick = function()
 {
     img.style.marginTop='200px';
+    setInterval(move,200);
 };
-setInterval(move,200);
+
 var margin=0;
 function move()
 {
