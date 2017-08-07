@@ -90,11 +90,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/:role', function (req, res) {
+/*app.get('/:role', function (req, res) {
   //res.sendFile(path.join(__dirname, 'ui', 'sruthi.html'));
   var role=req.params.role;
   res.send(createTemplate(contents[role]));
-});
+});*/
 
 app.get('/counter', function (req, res) {
     counter++;
