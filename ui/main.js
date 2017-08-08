@@ -1,7 +1,7 @@
 console.log('Loaded!');
-var name = document.getElementById("name").value;
+var comment = document.getElementById("name").value;
 var submit= document.getElementById("submit");
-submit.onClick = function(){
+submit.onclick = function(){
     console.log('in f!');
     var names=["1","2"];
     var list="";
