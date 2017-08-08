@@ -103,6 +103,13 @@ app.get('/counter', function (req, res) {
   res.send(""+counter);
 });
 
+var comments=[];
+app.get('/submitComment/:comment', function (req, res) {
+   var comment = req.params.comment;
+   comments.push(comment);
+  res.send(JSON.stringify(comments));
+});
+
 /*app.get('/sandy', function (req, res) {
  // res.sendFile(path.join(__dirname, 'ui', 'sandy.html'));
  res.send(createTemplate(contents[g]));
