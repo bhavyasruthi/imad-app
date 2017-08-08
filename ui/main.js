@@ -10,5 +10,5 @@ submit.onclick = function(){
    list += names[i];
     }
    var namesList= document.getElementById("list"); 
-   nameList.innerHTML=list;
+   namesList.innerHTML=list;
 };
