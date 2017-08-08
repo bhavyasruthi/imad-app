@@ -1,8 +1,13 @@
 console.log('Loaded!');
-var counter=0;
-document.getElementById('b').onclick = function()
-{
-    alert("dfg");
-    counter++;
-    document.getElementById('b').innerHTML = counter;
+var name = document.getElementById("name").value;
+var submit= document.getElementById("submit");
+submit.onClick = function(){
+    var names=["1"];
+    var list="";
+    for(var i=0;i<names.length;i++)
+    {
+   list += names[i];
+    }
+   var namesList= document.getElementById("list"); 
+   nameList.innerHTML=list;
 };
