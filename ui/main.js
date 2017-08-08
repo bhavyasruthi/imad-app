@@ -2,7 +2,8 @@ console.log('Loaded!');
 var name = document.getElementById("name").value;
 var submit= document.getElementById("submit");
 submit.onClick = function(){
-    var names=["1"];
+    console.log('in f!');
+    var names=["1","2"];
     var list="";
     for(var i=0;i<names.length;i++)
     {
