@@ -13,7 +13,7 @@ var submit= document.getElementById("submit");
    namesList.innerHTML=list;
 };*/
 submit.onclick = function(){
-    console.log('in f!');
+    console.log('in f!'+comment);
      var namesList= document.getElementById("list");
    namesList.innerHTML= '<li>' + comment + '</li>';
 };
