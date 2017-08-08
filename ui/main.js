@@ -1,5 +1,6 @@
 console.log('Loaded!');
-var comment = document.getElementById("name").value;
+var comment = document.getElementById("name");
+var ncomment = comment.value;
 var submit= document.getElementById("submit");
 /*submit.onclick = function(){
     console.log('in f!');
@@ -13,7 +14,7 @@ var submit= document.getElementById("submit");
    namesList.innerHTML=list;
 };*/
 submit.onclick = function(){
-    console.log('in f!'+comment+"Szvsf");
+    console.log('in f!'+ncomment+"Szvsf");
     alert(comment);
      var namesList= document.getElementById("list");
    namesList.innerHTML= '<li>' + comment + '</li>';
