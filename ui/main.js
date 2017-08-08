@@ -15,7 +15,7 @@ var submit= document.getElementById("submit");
 };*/
 submit.onclick = function(){
     console.log('in f!'+ncomment+"Szvsf");
-    alert(comment);
+    alert(ncomment);
      var namesList= document.getElementById("list");
-   namesList.innerHTML= '<li>' + comment + '</li>';
+   namesList.innerHTML= '<li>' + ncomment + '</li>';
 };
