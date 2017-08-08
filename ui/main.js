@@ -14,6 +14,7 @@ var submit= document.getElementById("submit");
 };*/
 submit.onclick = function(){
     console.log('in f!'+comment+"Szvsf");
+    alert(comment);
      var namesList= document.getElementById("list");
    namesList.innerHTML= '<li>' + comment + '</li>';
 };
