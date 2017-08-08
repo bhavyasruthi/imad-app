@@ -7,7 +7,7 @@ submit.onclick = function(){
     var list="";
     for(var i=0;i<names.length;i++)
     {
-   list += names[i];
+   list += '<li>' +names[i] + '</li>';
     }
    var namesList= document.getElementById("list"); 
    namesList.innerHTML=list;
