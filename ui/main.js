@@ -14,5 +14,6 @@ var submit= document.getElementById("submit");
 };*/
 submit.onclick = function(){
     console.log('in f!');
+     var namesList= document.getElementById("list");
    namesList.innerHTML= '<li>' + comment + '</li>';
 };
