@@ -14,6 +14,7 @@ submit.onclick = function()
                 {
                 console.log('in f!');
                 var names=request.responseText;
+                console.log('in f!'+names);
                 names= JSON.parse(names);
                 var list="";
                 for(var i=0;i<names.length;i++)
@@ -25,7 +26,7 @@ submit.onclick = function()
                 }
             }
          };
-   console.log(name);
+   console.log(ncomment);
    request.open('GET','http://sbhavyasruthi36.imad.hasura-app.io/submitComment/:'+ncomment,true);
    //request.open('GET','http://sbhavyasruthi36.imad.hasura-app.io/submitComment/sru',true);
     request.send(null);
