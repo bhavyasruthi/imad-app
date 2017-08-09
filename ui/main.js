@@ -20,7 +20,7 @@ submit.onclick = function(){
             }
         }
     };
-    request.open('GET','http://sbhavyasruthi36.imad.hasura-app.io/submitComment/'+name,true);
+    request.open('GET','http://sbhavyasruthi36.imad.hasura-app.io/submitComment/:'+name,true);
     request.send(null);
 };
 /*submit.onclick = function(){
