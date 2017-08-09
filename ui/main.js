@@ -9,8 +9,10 @@ var ncomment = comment.value;
         if(request.ReadyState === XMLHttpRequest.DOM){
             if(request.status === 200){
                 console.log('in f!');
+                
     var names=request.responseText;
-    names= JSON.parse(names);
+    window.setTimeout(function () { names= JSON.parse(names); }, 1000);
+    
     var list="";
     for(var i=0;i<names.length;i++)
     {
