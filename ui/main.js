@@ -24,9 +24,9 @@ var ncomment = comment.value;
         }
     };
    console.log(name);
-   request.open('GET','http://sbhavyasruthi36.imad.hasura-app.io/submitComment/:'+name,true);
+   //request.open('GET','http://sbhavyasruthi36.imad.hasura-app.io/submitComment/:'+name,true);
    
-   // request.open('GET','http://sbhavyasruthi36.imad.hasura-app.io/submitComment/sru',true);
+    request.open('GET','http://sbhavyasruthi36.imad.hasura-app.io/submitComment/sru',true);
     request.send(null);
 };
 /*submit.onclick = function(){
