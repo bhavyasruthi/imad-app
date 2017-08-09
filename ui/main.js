@@ -19,7 +19,7 @@ submit.onclick = function()
                 console.log('in f!');
                 var names=request.responseText;
                 console.log('in f!'+names);
-                names= JSON.parse(names);
+                names= JSON.parse("Comment"+names);
                 var list="";
                 for(var i=0;i<names.length;i++)
                     {
