@@ -2,9 +2,14 @@ console.log('Loaded!');
 var comment = document.getElementById("name");
 var ncomment = comment.value;
 var submit= document.getElementById("submit");
-/*submit.onclick = function(){
-    console.log('in f!');
-    var names=["1","2"];
+submit.onclick = function(){
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function(){
+        if(request.ReadyState === XMLHttpRequest.DOM){
+            if(request.status === 200){
+                console.log('in f!');
+    var names=request.responseText;
+    names= JSON.parse(names);
     var list="";
     for(var i=0;i<names.length;i++)
     {
@@ -12,10 +17,15 @@ var submit= document.getElementById("submit");
     }
    var namesList= document.getElementById("list"); 
    namesList.innerHTML=list;
-};*/
-submit.onclick = function(){
+            }
+        }
+    };
+    request.open('GET','http://sbhavyasruthi36.imad.hasura-app.io/submitComment/'+name,true);
+    request.send(null);
+};
+/*submit.onclick = function(){
     console.log('in f!'+ncomment+"Szvsf");
     alert(ncomment);
      var namesList= document.getElementById("list");
    namesList.innerHTML= '<li>' + ncomment + '</li>';
-};
+};*/
