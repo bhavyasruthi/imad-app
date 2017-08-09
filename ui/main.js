@@ -19,11 +19,11 @@ submit.onclick = function()
                 console.log('in f!');
                 var names=request.responseText;
                 console.log('in f!'+names);
-                names= JSON.parse("Comment"+names);
+                names= JSON.parse(names);
                 var list="";
                 for(var i=0;i<names.length;i++)
                     {
-                         list += '<li>' +names[i] + '</li>';
+                         list += '<li>' +"Comment" +names[i] + '</li>';
                      }
                 var namesList= document.getElementById("list"); 
                 namesList.innerHTML=list;
