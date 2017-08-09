@@ -3,6 +3,7 @@ console.log('Loaded!');
 var submit= document.getElementById("submit");
 submit.onclick = function()
   {
+      console.log('in function lin1!');
     var comment = document.getElementById("name");
     var ncomment = comment.value;
     var request = new XMLHttpRequest();
