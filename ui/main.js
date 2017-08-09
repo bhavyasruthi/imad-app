@@ -1,8 +1,9 @@
 console.log('Loaded!');
-var comment = document.getElementById("name");
-var ncomment = comment.value;
+
 var submit= document.getElementById("submit");
 submit.onclick = function(){
+    var comment = document.getElementById("name");
+var ncomment = comment.value;
     var request = new XMLHttpRequest();
     request.onreadystatechange = function(){
         if(request.ReadyState === XMLHttpRequest.DOM){
