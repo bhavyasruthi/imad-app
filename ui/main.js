@@ -9,10 +9,13 @@ submit.onclick = function()
     var request = new XMLHttpRequest();
     request.onreadystatechange = function()
         {
+            console.log('in function readystatechnge!');
         if(request.readyState === XMLHttpRequest.DOM)
             {
+                console.log('in function liif readystten1!');
             if(request.status === 200)
                 {
+                    
                 console.log('in f!');
                 var names=request.responseText;
                 console.log('in f!'+names);
