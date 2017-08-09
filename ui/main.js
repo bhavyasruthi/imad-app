@@ -11,7 +11,7 @@ var ncomment = comment.value;
                 console.log('in f!');
                 
     var names=request.responseText;
-    window.setTimeout(function () { names= JSON.parse(names); }, 1000);
+    names= JSON.parse(names);
     
     var list="";
     for(var i=0;i<names.length;i++)
