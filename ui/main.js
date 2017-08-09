@@ -10,10 +10,10 @@ submit.onclick = function()
     request.onreadystatechange = function()
         {
             console.log('in function readystatechnge!');
-        if(request.readyState === XMLHttpRequest.DOM)
+        if(request.readyState == XMLHttpRequest.DOM)
             {
                 console.log('in function liif readystten1!');
-            if(request.status === 200)
+            if(request.status == 200)
                 {
                     
                 console.log('in f!');
