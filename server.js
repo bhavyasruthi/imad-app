@@ -2,7 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
-const imdb = require('imdb-api');
+//const imdb = require('imdb-api');
 var app = express();
 var counter=0;
 var contents = {
