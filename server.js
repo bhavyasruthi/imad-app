@@ -101,7 +101,7 @@ app.get('/', function (req, res) {
 
 app.get('/counter', function (req, res) {
     
-imdb.get('Titanic', {apiKey: '7e44a7ae', timeout: 1800}).then((function(data) { console.log(data); }));
+///imdb.get('Titanic', {apiKey: '7e44a7ae', timeout: 1800}).then((function(data) { console.log(data); }));
     counter++;
   res.send(""+counter);
 });
