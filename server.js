@@ -2,6 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
+const imdb = require('imdb-api');
 var app = express();
 var counter=0;
 var contents = {
@@ -99,6 +100,8 @@ app.get('/', function (req, res) {
 });*/
 
 app.get('/counter', function (req, res) {
+    
+imdb.get('Titanic', {apiKey: '7e44a7ae', timeout: 1800}).then((function(data) { console.log(data); }));
     counter++;
   res.send(""+counter);
 });
