@@ -1,10 +1,17 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-
+var pool= require('pg').Pool;
 //const imdb = require('imdb-api');
 var app = express();
 var counter=0;
+var config={
+   user : 'sbhavyasruthi36',
+   database : 'sbhavyasruthi36',
+   host : 'http://db.imad.hasura-app.io',
+   port: '5432',
+   password : process.env.DB_PASSWORD
+};
 var contents = {
      "sruthi" : {
         "title" : "sruthi",
@@ -104,6 +111,18 @@ app.get('/counter', function (req, res) {
 ///imdb.get('Titanic', {apiKey: '7e44a7ae', timeout: 1800}).then((function(data) { console.log(data); }));
     counter++;
   res.send(""+counter);
+});
+
+pool = new Pool(config);
+app.get('/dbconn', function (req, res) {
+    pool.query('SELECT * FROM USER',function(err,result){
+    if(err){
+        res.ststus(500).send(err.toString());
+    }
+    else{
+        res.send(JSON.stringify(result));
+    }
+});
 });
 
 var comments=[];
