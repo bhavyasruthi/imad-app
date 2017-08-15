@@ -1,8 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-var pool= require('pg').Pool;
-//const imdb = require('imdb-api');
+//var pool= require('pg').Pool;
 var app = express();
 var counter=0;
 var config={
