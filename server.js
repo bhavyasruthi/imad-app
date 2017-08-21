@@ -68,8 +68,8 @@ var contents = {
 }
 function createTemplate(data)
 {
-    var role=data.role;
-    var matter= data.matter;
+    var role=data.title;
+    var matter= data.content;
 var htmlTemplate = `<html>
  <head>
     <meta charset="UTF-8">
