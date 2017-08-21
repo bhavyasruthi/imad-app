@@ -132,7 +132,7 @@ app.get('/submitComment/:comment', function (req, res) {
 });
 
 app.get('/articles/:articalName', function (req, res) {
-    pool.query("SELECT * FROM ARTICLE where title="+req.params.articalName,function(err,result){
+    pool.query("SELECT * FROM ARTICLE where title='"+req.params.articalName+"'",function(err,result){
      if(err){
         res.status(500).send(err.toString());
     }
