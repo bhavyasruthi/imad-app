@@ -131,10 +131,23 @@ app.get('/submitComment/:comment', function (req, res) {
   res.send(JSON.stringify(comments));
 });
 
-/*app.get('/sandy', function (req, res) {
- // res.sendFile(path.join(__dirname, 'ui', 'sandy.html'));
- res.send(createTemplate(contents[g]));
-});*/
+app.get('/articles/:articalName', function (req, res) {
+    pool.query("SELECT * FROM ARTICLE where title="+req.params.articalName,function(err,result){
+     if(err){
+        res.status(500).send(err.toString());
+    }
+    else{
+        if(result.rows.length===0){
+           res.ststus(500).send("Not Found"); 
+        }
+        else{
+           var articleData =  result.rows[0];
+           res.send(createTemplate(articleData));
+        }
+    }   
+    });
+ 
+});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
