@@ -114,7 +114,7 @@ app.get('/counter', function (req, res) {
 
 var pool = new Pool(config);
 app.get('/dbconn', function (req, res) {
-    pool.query('SELECT * FROM USER',function(err,result){
+    pool.query('SELECT * FROM ARTICLE',function(err,result){
     if(err){
         res.ststus(500).send(err.toString());
     }
