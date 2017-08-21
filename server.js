@@ -1,13 +1,13 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-//var pool= require('pg').Pool;
+var Pool= require('pg').Pool;
 var app = express();
 var counter=0;
 var config={
    user : 'sbhavyasruthi36',
    database : 'sbhavyasruthi36',
-   host : 'http://db.imad.hasura-app.io',
+   host : 'db.imad.hasura-app.io',
    port: '5432',
    password : process.env.DB_PASSWORD
 };
@@ -112,7 +112,7 @@ app.get('/counter', function (req, res) {
   res.send(""+counter);
 });
 
-pool = new Pool(config);
+var pool = new Pool(config);
 app.get('/dbconn', function (req, res) {
     pool.query('SELECT * FROM USER',function(err,result){
     if(err){
