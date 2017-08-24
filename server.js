@@ -135,7 +135,7 @@ app.get('/hash/:input',function(req,res){
    res.send(hashedValue);
 });
 
-app.post('/createUser',function(req,res){
+app.get('/createUser',function(req,res){
     var username = req.body.username;
     var password = req.body.password;
     var email = req.body.email;
