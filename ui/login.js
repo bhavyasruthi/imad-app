@@ -1,3 +1,4 @@
+console.log('loaded login.js');
 var submit= document.getElementById("submit");
 submit.onclick = function()
   {
@@ -24,5 +25,5 @@ submit.onclick = function()
          };
    request.open('POST','http://sbhavyasruthi36.imad.hasura-app.io/login',true);
    request.setRequestHeader('Content-Type','application/json');
-    request.send(JSON.stringify({"username":username ,"password" : password}));
+    request.send(JSON.stringify({username:username ,password : password}));
 };
