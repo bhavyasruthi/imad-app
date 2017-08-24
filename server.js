@@ -179,6 +179,10 @@ app.post('/login',function(req,res){
 });
 
 
+app.get('/loginMe', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'login.html'));
+});
+
 var comments=[];
 app.get('/submitComment/:comment', function (req, res) {
    var comment = req.params.comment;
