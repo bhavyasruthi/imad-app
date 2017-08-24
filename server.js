@@ -171,7 +171,7 @@ app.post('/login',function(req,res){
         res.send("user logged successully "+username);
             }
             else{
-                res.send(403).send("wrong password");
+                res.send("wrong password");
             }
         }
     }
