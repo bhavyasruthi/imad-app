@@ -4,6 +4,7 @@ var path = require('path');
 var Pool= require('pg').Pool;
 var app = express();
 var crypto = require('crypto');
+var bodyParser = require('body-parser');
 var counter=0;
 var config={
    user : 'sbhavyasruthi36',
@@ -95,7 +96,7 @@ return htmlTemplate;
 
 
 app.use(morgan('combined'));
-
+app.use(bodyParser.json());
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -117,7 +118,7 @@ var pool = new Pool(config);
 app.get('/dbconn', function (req, res) {
     pool.query('SELECT * FROM ARTICLE',function(err,result){
     if(err){
-        res.ststus(500).send(err.toString());
+        res.status(500).send(err.toString());
     }
     else{
         res.send(JSON.stringify(result));
@@ -126,12 +127,30 @@ app.get('/dbconn', function (req, res) {
 });
 
 function hash(input,salt){
-    return crypto.pbkdf2Sync(input, salt, 100000, 512, 'sha512').toString('hex');
+    var hashed = crypto.pbkdf2Sync(input, salt, 100000, 512, 'sha512').toString('hex');
+    return ["pbkdf2","10000",salt,hashed].join('$');
 }
 app.get('/hash/:input',function(req,res){
    var hashedValue = hash(req.params.input ,"random");
    res.send(hashedValue);
 });
+
+app.post('/createUser',function(req,res){
+    var username = req.body.username;
+    var password = req.body.password;
+    var email = req.body.email;
+    var salt= crypto.randomBytes(128).toString('hex');
+   var dbString = hash(password,salt); 
+   pool.query("INSERT INTO 'user'(password,username,email) VALUES($!,$2,$3)",[dbString,username,email],function(err,result){
+       if(err){
+        res.status(500).send(err.toString());
+    }
+    else{
+        res.send("user created successully "+username);
+    }
+   });
+});
+
 
 var comments=[];
 app.get('/submitComment/:comment', function (req, res) {
