@@ -191,6 +191,11 @@ app.get('/checkLogin', function (req, res) {
     res.send("not logged");
 });
 
+app.get('/logout', function (req, res) {
+   delete req.session.auth;
+   res.send("logged out");
+});
+
 app.get('/loginMe', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'login.html'));
 });
