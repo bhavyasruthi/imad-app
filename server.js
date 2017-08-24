@@ -4,6 +4,7 @@ var path = require('path');
 var Pool= require('pg').Pool;
 var app = express();
 var crypto = require('crypto');
+var session = require('express-session');
 var bodyParser = require('body-parser');
 var counter=0;
 var config={
@@ -97,6 +98,10 @@ return htmlTemplate;
 
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+app.use(session({
+    secret : 'dfbes',
+    cookie : {maxAge :100000000}
+}));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -168,6 +173,7 @@ app.post('/login',function(req,res){
             var salt = dbString.split('$')[2];
             var hashedPwd =hash(password,salt);
             if(hashedPwd === dbString){
+                req.session.auth = {userId : result.rows[0].id};
         res.send("user logged successully "+username);
             }
             else{
@@ -178,6 +184,12 @@ app.post('/login',function(req,res){
    });
 });
 
+app.get('/checkLogin', function (req, res) {
+    if(req.session && req.session.auth&& req.session.auth.userId)
+    res.send("user logged in "+req.session.auth.userId.toString());
+    else
+    res.send("not logged");
+});
 
 app.get('/loginMe', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'login.html'));
