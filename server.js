@@ -11,7 +11,7 @@ var config={
    port: '5432',
    password : process.env.DB_PASSWORD
 };
-var contents = {
+/*var contents = {
      "sruthi" : {
         "title" : "sruthi",
         "role"  : "Bride",
@@ -65,7 +65,7 @@ var contents = {
         Yes, He is everything to me....
         </p>`
     }
-}
+}*/
 function createTemplate(data)
 {
     var role=data.title;
@@ -122,6 +122,14 @@ app.get('/dbconn', function (req, res) {
         res.send(JSON.stringify(result));
     }
 });
+});
+
+function hash(input,salt){
+    return crypto.pbkdf2Sync(input, salt, 100000, 512, 'sha512');
+}
+app.get('/hash/:input',function(req,res){
+   var hashedValue = hash(req.params.input ,"random");
+   res.send(hashedValue);
 });
 
 var comments=[];
