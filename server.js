@@ -128,7 +128,8 @@ app.get('/dbconn', function (req, res) {
 
 function hash(input,salt){
     var hashed = crypto.pbkdf2Sync(input, salt, 100000, 512, 'sha512').toString('hex');
-    return ["pbkdf2","10000",salt,hashed].join('$');
+    //return ["pbkdf2","10000",salt,hashed].join('$');
+    return hashed;
 }
 app.get('/hash/:input',function(req,res){
    var hashedValue = hash(req.params.input ,"random");
