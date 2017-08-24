@@ -128,8 +128,8 @@ app.get('/dbconn', function (req, res) {
 
 function hash(input,salt){
     var hashed = crypto.pbkdf2Sync(input, salt, 100000, 512, 'sha512').toString('hex');
-    //return ["pbkdf2","10000",salt,hashed].join('$');
-    return hashed;
+    return ["pbkdf2","10000",salt,hashed].join('$');
+    
 }
 app.get('/hash/:input',function(req,res){
    var hashedValue = hash(req.params.input ,"random");
@@ -142,7 +142,7 @@ app.post('/createUser',function(req,res){
     var email = req.body.email;
     var salt= crypto.randomBytes(128).toString('hex');
    var dbString = hash(password,salt); 
-   pool.query('INSERT INTO "user" (password,username,email) VALUES($!,$2,$3)',[dbString,username,email],function(err,result){
+   pool.query('INSERT INTO "user" (password,username,email) VALUES($1,$2,$3)',[dbString,username,email],function(err,result){
        if(err){
         res.status(500).send(err.toString());
     }
