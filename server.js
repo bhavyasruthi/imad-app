@@ -152,6 +152,32 @@ app.post('/createUser',function(req,res){
    });
 });
 
+app.post('/login',function(req,res){
+    var username = req.body.username;
+    var password = req.body.password;
+   pool.query('SELECT * FROM "user" WHERE username = $1',[username],function(err,result){
+       if(err){
+        res.status(500).send(err.toString());
+    }
+    else{
+        if(res.rows.length === 0){
+            res.send(403).send("user not exist"+username);
+        }
+        else{
+            var dbString = result.rows[0].password;
+            var salt = dbString.split('$')[2];
+            var hashedPwd =hash(password,salt);
+            if(hashedPwd === dbString){
+        res.send("user logged successully "+username);
+            }
+            else{
+                res.send(403).send("wrong password");
+            }
+        }
+    }
+   });
+});
+
 
 var comments=[];
 app.get('/submitComment/:comment', function (req, res) {
