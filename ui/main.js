@@ -47,17 +47,13 @@ console.log('loaded login.js');
 var submit= document.getElementById("submit");
 submit.onclick = function()
   {
-      console.log('button clicked');
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
     console.log('button clicked'+username+password);
     var request = new XMLHttpRequest();
-    request.onreadystatechange = function()
-        {
-            console.log('in function readystatechnge!');
+    request.onreadystatechange = function(){
         if(request.readyState === XMLHttpRequest.DONE)
             {
-                console.log('in function liif readystten1!');
             if(request.status === 200)
                 {
                    alert("logged in") ;
