@@ -126,7 +126,7 @@ app.get('/dbconn', function (req, res) {
 });
 
 function hash(input,salt){
-    return crypto.pbkdf2Sync(input, salt, 100000, 512, 'sha512');
+    return crypto.pbkdf2Sync(input, salt, 100000, 512, 'sha512').toString();
 }
 app.get('/hash/:input',function(req,res){
    var hashedValue = hash(req.params.input ,"random");
