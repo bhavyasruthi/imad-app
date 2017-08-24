@@ -1,10 +1,10 @@
-
 var submit= document.getElementById("submit");
 submit.onclick = function()
   {
-      console.log('in function lin1!');
-    var comment = document.getElementById("name");
-    var ncomment = comment.value;
+      console.log('button clicked');
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    console.log('button clicked'+username+password);
     var request = new XMLHttpRequest();
     request.onreadystatechange = function()
         {
@@ -14,23 +14,14 @@ submit.onclick = function()
                 console.log('in function liif readystten1!');
             if(request.status === 200)
                 {
-                    
-                console.log('in f!');
-                var names=request.responseText;
-                console.log('in f!'+names);
-                names= JSON.parse(names);
-                var list="";
-                for(var i=0;i<names.length;i++)
-                    {
-                         list += '<li>' +"Comment" +names[i] + '</li>';
-                     }
-                var namesList= document.getElementById("list"); 
-                namesList.innerHTML=list;
+                   alert("logged in") ;
                 }
+                else if(request.status === 403)
+                alert("Incorrect username & password");
+                 else if(request.status === 500)
+                alert("Something went wrong");
             }
          };
-   console.log(ncomment);
-   request.open('GET','http://sbhavyasruthi36.imad.hasura-app.io/submitComment/:'+ncomment,true);
-   //request.open('GET','http://sbhavyasruthi36.imad.hasura-app.io/submitComment/sru',true);
-    request.send(null);
+   request.open('POST','http://sbhavyasruthi36.imad.hasura-app.io/login',true);
+    request.send(JSON.stringify({"username":username ,"password" : password}));
 };
